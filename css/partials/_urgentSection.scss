@@ -1,0 +1,216 @@
+
+//Urgent Section Styling
+.urgent {
+	padding:5% 0;
+	background: linear-gradient(rgba(250,250,250,0.5), rgba(250,250,250,0.8)), url(../assets/images/biggerHands.jpg);
+	background-repeat:no-repeat;
+	background-size:cover;
+	background-position:center;
+	text-align: center;
+	button {
+		@include buttonStyles($brandSecondary);
+		margin: 20px 0 40px 0;
+	}
+	.quote {
+		font-size: 1.8rem;
+		padding:40px 20% 20px 20%;
+		line-height: 1.5;
+		border-top: 1px solid white;
+		position: relative;
+		@include bp('sml') {
+			padding: 20px 15px 20px 20px;
+			font-size: 1.5rem;
+		}
+	}
+	h5 {
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		@include fontLight('rale');
+		letter-spacing: 1.3px;
+		.red {
+			color:$brandPrimary;
+		}
+	}
+}
+
+.quote:before, .quote:after {	
+	display:block;
+	position: absolute;
+	color:$brandPrimary;
+	font-size:8rem;
+	font-family: 'Georgia', serif;
+	line-height: 1;
+	top:25%;
+}
+.quote:before {
+	content: "\201C";
+	left:18%;
+	@include bp ('xlrg') {
+		left: 12%;
+	}
+	@include bp('med') {
+		left: 9%;
+	}
+	@include bp('sml') {
+		left:5px;
+		top:5px;
+		font-size: 5rem;
+	}
+}
+.quote:after {
+	content: "\201D";
+	right:18%;
+	@include bp ('xlrg') {
+		right:12%;
+	}
+	@include bp ('med') {
+		right:9%;
+	}
+	@include bp ('sml'){
+		right:5px;
+		top:5px;
+		font-size: 5rem;
+	}
+}
+.urgentContain {
+	display: flex;
+	justify-content:center;
+	align-items:center;
+	width:80%;
+	margin: 0 auto;
+	padding-bottom:20px;
+	@include bp('lrg') {
+		width:90%;
+	}
+	@include bp('med') {
+		width: 100%;
+	}
+	@include bp('sml') {
+		flex-direction:column;
+	}
+}
+
+.urgentBox {
+	width:33.3%;
+	@include bp ('med') {
+		flex-shrink: 0;
+	}
+	@include bp ('sml') {
+		width:100%;
+	}
+	h2 {
+		font-size: 5rem;
+		font-weight: 900;
+		line-height: 0.8;
+		@include bp ('med') {
+			font-size: 4rem;
+		}
+		@include bp ('sml') {
+			font-size: 2.5rem;
+		}
+		.light {
+			@include fontLight('rale');
+		}
+	}
+	ul {
+		padding:0;
+		list-style: none;
+		font-size: 2rem;
+		@include bp ('med') {
+			font-size: 1.5rem;
+		}
+		h3 {
+			margin:5px 0;
+			font-family: $sanSerifTwo;
+			text-align: left;
+			.light{
+			@include fontLight('open');
+			}
+			@include bp ('sml') {
+				text-align: center;
+			}
+		}
+	}
+}
+
+.urgentBox--left {
+	text-align: right;
+	padding:5% 0 5% 5%;
+	@include bp('med') {
+		padding:2% 0 2% 2%;
+	}
+	@include bp('sml') {
+		text-align:center;
+	}
+}
+
+.statusCircle {
+	position: relative;
+	margin: 0 4%;
+	@include bp('sml'){
+		width:50%;
+	}
+}
+
+
+.statusCircle .statusText {
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%, -50%);
+	h2 {
+		font-size: 5.5rem;
+		font-family: $sanSerifTwo;
+		margin:0;
+		line-height: .9;
+		@include bp('med') {
+			font-size: 4.5rem;
+		}
+	}
+	.red {
+		color: $brandPrimary;
+		font-size: 7rem;
+		@include bp('med') {
+			font-size: 5.5rem;
+		}
+	}
+	h4 {
+		@include fontLight('open');
+		margin:0;
+		font-size: 2rem;
+		text-align: right;
+	}
+}
+
+//SVG Animation Below
+
+.stGreyAnimate {
+	animation: grow 5s linear forwards;
+}
+
+//SVG default Styling
+.statusCircle .st0 {
+	fill:none;
+	stroke:#DE3C2F;
+	stroke-width:8;
+	stroke-miterlimit:10;
+}
+
+.statusCircle .st2 {
+	fill:none;
+	stroke:#E3594E;
+	stroke-width:8;
+	stroke-miterlimit:10;
+	stroke-dasharray:11.9412,11.9412;
+}
+
+ .stGrey {
+	fill:none;
+	stroke: grey;
+	stroke-width:8;
+	stroke-miterlimit:10;
+	stroke-dasharray: 750, 750;
+	stroke-dashoffset:1500;
+}
+
+

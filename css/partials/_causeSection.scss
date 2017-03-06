@@ -1,0 +1,301 @@
+.cause {
+	text-align: center;
+	padding-top:5%;
+}
+.cause__headText {
+	font-size:4.5rem;
+	margin: 0 0 15px 0;
+	.light {
+		@include fontLight('rale');
+	}
+}
+.cause .nav {
+	display: flex;
+	list-style: none;
+	padding:0;
+	margin:0 auto;
+	width: 50%;
+	justify-content:space-around;
+	@include bp('med') {
+		width:100%;
+	}
+	@include bp('sml') {
+		display:none;
+	}
+}
+
+.nav__link {
+	text-decoration: none;
+	color: $brandSecondary;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	padding: 10px;
+	transition: all 0.3s ease;
+	&:hover {
+		background: $brandPrimary;
+		border-radius: 5px;
+		color: $accentOne;
+	}
+}
+
+//Option Menu for MOBILE
+select {
+	width:90%;
+	border:none;
+	border: 2px solid $brandPrimary;
+	text-align: center;
+	background:white;
+	font-size: 2rem;
+	color: $brandSecondary;
+	border-radius: 0;
+	padding: 5px;
+	display: none;
+	@include bp ('sml') {
+		display:block;
+		margin: 0 auto 20px auto;
+	}
+}
+
+.causeBoxContain {
+	display: flex;
+	margin-top:30px;
+	justify-content:space-between;
+	position: relative;
+	@include bp('xlrg') {
+		justify-content: center;
+		margin: 30px 2% 0 2%;
+	}
+	@include bp('sml') {
+		display:block;
+		margin: 0;
+	}
+}
+
+.causeBoxContain:before, .causeBoxContain:after {
+	position: absolute;
+	font-family: fontAwesome;
+	display: block;
+	top:50%;
+	transform: translateY(-50%);
+	color: $accentTwo;
+	font-size: 6rem;
+	@include bp ('sml') {
+		display:none;
+	}
+}
+
+.causeBoxContain:before {
+	content: "\f104";
+	left:-5%;
+	@include bp('xlrg') {
+		left:50px;
+	}
+	@include bp('lrg') {
+		left: 40px;
+	}	
+	@include bp('med') {
+		left:55px;
+	}
+}
+
+.causeBoxContain:after {
+	content: "\f105";
+	right:-5%;
+	@include bp('xlrg') {
+		right: 50px;
+	}
+	@include bp('lrg') {
+		right: 40px;
+	}
+	@include bp('med') {
+		right:55px;
+	}
+}
+
+.causeBox {
+	width: 33.3%;
+	margin-right: 2%;
+	border:1px solid lighten($accentTwo, 30);
+	@include bp('lrg') {
+		width:40%;
+	}
+	@include bp ('med') {
+		width:50%;
+	}
+	@include bp ('sml') {
+		display: flex;
+		width:100%;
+		border:none;
+	}
+}
+
+.causeBox__containForMobile {
+	@include bp('sml') {
+		width:70%;
+	}
+}
+
+.causeBox--hidden {
+	@include bp ('xlrg') {
+		display:none;
+	}
+	@include bp ('sml') {
+		display:flex;
+	}
+}
+
+.causeBox--hiddenSmall {
+	@include bp ('med') {
+		display: none;
+	}
+	@include bp('sml') {
+		display: flex;
+	}
+}
+.causeBox--noMargin {
+	margin-right:0;
+	@include bp('sml') {
+		margin:0 auto;
+	}
+}
+.causeBox__tag {
+		font-size:1.6rem;
+		margin:0;
+		padding:5% 0;
+	}
+
+.causeBox__imgBox {
+	position: relative;
+	@include bp('sml') {
+		width:30%;
+		background: $brandSecondary;
+	}
+}
+
+.causeBox__imgOverlay {
+	position: absolute;
+	bottom:0;
+	left:50%;
+	transform:translate(-50%, -50%);
+	color: $accentOne;
+	font-size: 2.4rem;
+	width:100%;
+	@include bp('med') {
+		font-size: 2rem;
+		margin:0;
+	}
+	@include bp('sml') {
+		top:72%;
+	}
+}
+
+.causeBox__img {
+	max-width: 100%;
+	display:block;
+	
+}
+
+.causeBox__statusLine {
+	width:100%;
+	height:12px;
+	background: url(../assets/stripes-pattern.png), linear-gradient(rgba(230, 230, 230, 0.7), rgba(230,230,230,0.6));
+	background-repeat: repeat;
+	background-size: contain;
+	position: relative;
+}
+
+.causeBox__statusLine--overlay {
+	position: absolute;
+	height:12px;
+	width: 50%;
+	top:0;
+	bottom:0;
+	left:0;
+	background: rgba(222,76,19,0.5);
+}
+
+.causeBox__statusLine--overlayFull {
+	width:80%;
+}
+
+.causeBox__statusLine--overlayNotFull
+{
+	width:25%;
+}
+
+.lettersFlex {
+	display: flex;
+	justify-content: space-around;
+	align-items:center;
+	padding: 0 10%;
+	margin-bottom:3%;
+	max-width: 100%;
+	@include bp ('lrg') {
+		padding:0 2%;
+	}
+	@include bp('med') {
+		padding: 0 5px;
+		align-items:baseline;
+	}
+	@include bp('sml') {
+		justify-content: space-around;
+	}
+}
+
+.causeLetter__value {
+	margin:0;
+	font-size: 3rem;
+	font-family: $sanSerifTwo;
+	text-transform:lowercase;
+	@include bp ('sml') {
+		font-size: 2.5rem;
+	}
+	span {
+		color:$brandPrimary;
+		font-size:4rem;
+		@include bp ('sml') {
+			font-size: 4rem;
+		}
+	}
+}
+
+.causeLetter__of {
+	font-size: 2rem;
+	margin:0 2%;
+	font-family: $serif;
+	font-style: italic;
+	position: relative;
+	z-index: 1;
+	@include bp ('med') {
+		font-size: 1.5rem;
+	}
+	@include bp ('sml') {
+		font-size: 2rem;
+	}
+}
+
+
+.causeLetter__of:after {
+	content: ' ';
+	width:300%;
+	display: block;
+	position: absolute;
+	border-bottom:1px solid lighten($accentTwo, 30);
+	transform:translate(-50%, -50%) rotate(-65deg);
+	left:65%;
+	top: 50%;
+	z-index: -10;
+}
+
+.causeLetter__text {
+	margin-top:0;
+	font-size: 1.5rem;
+}
+
+.causeBox__button {
+	@include buttonStyles($brandSecondary);
+	margin-bottom: 5px;
+	@include bp ('sml') {
+		margin-bottom: 10px;
+	}
+}

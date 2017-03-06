@@ -1,0 +1,59 @@
+
+
+footer {
+	background: $brandSecondary;
+}
+
+.patternOverlay {
+	background: url(../assets/images/pattern.png);
+}
+
+.topFooter {
+	display: flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items:center;
+	padding:1% 0 5% 0;
+}
+
+.topFooter .logo {
+	@include logoStyles($accentOne);
+	margin-top: 50px;
+	margin-bottom:1%;
+}
+
+.footerInput {
+	background: none;
+	border:none;
+	background: white;
+	padding: 10px;
+	text-align:center;
+	width:18%;
+	font-size: 1.4rem;
+	@include bp('lrg') {
+		width:60%;
+	}
+}
+
+.submitButton--footer {
+	@include submitButton($accentOne);
+	margin-top: 15px;
+}
+
+.backgroundDark {
+	background: darken($brandSecondary, 12);
+}
+.bottomFooter {
+	padding:3%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.3rem;
+	color: $accentOne;
+	img {
+		width:25px;
+		max-width: 100%;
+		display: block;
+		margin: 0 5px;
+	}
+}

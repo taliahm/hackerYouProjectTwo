@@ -1,0 +1,206 @@
+//Responsive Mixin
+@mixin bp($size) {
+	@if ($size == 'xlrg') {
+		@media (max-width:1200px) {
+			@content;
+		}
+	}
+	@if ($size == 'lrg') {
+		@media (max-width: $bp-large) {
+			@content;
+	}
+}
+
+	@if $size == 'med' {
+		@media (max-width: $bp-medium) {
+			@content;
+		}
+	}
+//'smlmed' is only used once for navigation hides
+	@if $size == 'smlmed' {
+		@media (max-width: 650px) {
+			@content;
+		}
+	}
+
+	@if $size == 'sml' {
+		@media (max-width: $bp-small) {
+			@content;
+		}
+	}
+}
+
+html {
+	font-size: $fontSize;
+}
+
+body {
+	font-family: $sanSerifOne;
+	font-weight: 300;
+	color: $brandSecondary;
+	// font-size: 1rem;
+}
+
+.wrapper {
+	max-width: $wrapperWidth;
+	margin:0 auto;
+	@include bp('lrg') {
+		margin: 0 2%;
+	}
+	@include bp ('sml') {
+		margin:0;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $sanSerifOne;
+}
+
+h2 {
+	text-transform: uppercase;
+}
+
+a:visited {
+	outline:none;
+}
+
+
+//MIXINS
+@mixin logoStyles($color) {
+		display: flex;
+		align-items: center;
+		h3 {
+			text-transform: uppercase;
+			font-size: 2.8rem;
+			color: $color;
+		}
+		h3.lighten {
+			font-weight: 300;
+		}
+		img {
+			max-width: 100%;
+			width:75px;
+			display: block;
+			margin: 0 15px;
+			&:hover {
+				animation: heartBeat 1s linear infinite;
+			}
+		}	
+}
+
+@mixin buttonStyles($color) {
+		background: none;
+		text-transform: uppercase;
+		border:none;
+		border: 1px solid $color;
+		padding: 6px 35px;
+		font-size: 1.2rem;
+		letter-spacing: 1.3px;
+		transition: all 0.3s ease;
+		position: relative;
+		@include bp ('sml') {
+			padding: 12px 35px;
+			// font-size: 1rem;
+		}
+		.buttonIcon {
+			position: absolute;
+			right:0;
+			top:50%;
+			backface-visibility: hidden;
+			transform: rotateY(180deg) translate(-40px, -40px);
+			color: $brandPrimary;
+			font-size: 1.8rem;
+			transition: all 0.3s ease;
+		}
+		a {
+			color:$color;
+			text-decoration: none;
+		}
+		&:hover .buttonIcon {
+			transform: rotateY(0deg) translate(-50%, -50%);
+		}
+		&:hover a {
+			color:$brandPrimary;
+		}
+		&:hover {
+		 	transform:scale(1.2);
+		 	@include bp('sml') {
+		 		transform:scale(1);
+		 	}
+		}
+	}
+
+@mixin submitButton($color) {
+	position:relative;
+	transition: all 0.3s ease;
+	input[type=submit] {
+		background: none;
+		border:none;
+		border: 1px solid $color;
+		color: $color;
+		font-size: 1.2rem;
+		letter-spacing: 1.3px;
+		text-transform: uppercase;
+		padding: 10px 30px;
+		transition: all 0.3s ease;
+	}
+	.submitIcon {
+		position: absolute;
+		right:5px;
+		top: 50%;
+		color:$brandPrimary;
+		transform: rotateY(180deg) translate(-40px, 40px);
+		backface-visibility: hidden;
+		transition: all 0.3s ease-in;
+	}
+	&:hover .submitIcon{
+		transform: rotateY(0deg) translate(-50%, -50%);
+		text-shadow: 0 1px 1px lighten($brandPrimary, 10);
+	}
+	&:hover input[type=submit] {
+		color: $brandPrimary;
+	}
+}
+
+@mixin fontLight($font) {
+	@if $font == 'rale' {
+	font-weight: 200;
+	}
+
+	@if $font == 'open' {
+		font-weight: 300;
+	}
+}
+
+//ANIMATIONS
+@keyframes heartBeat {
+	0% {
+		transform: scale(1.2);
+	}
+
+	100% {
+		transform: scale (0.5);
+	}
+}
+
+
+@keyframes grow {
+	0% {
+		stroke-dashoffset: 1500;
+	}
+
+	20% {
+		stroke-dashoffset: 1300;
+	}
+
+	99% {
+		stroke-dashoffset: 750;
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+
+

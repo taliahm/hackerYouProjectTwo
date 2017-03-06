@@ -1,0 +1,183 @@
+
+.blog {
+	background: linear-gradient(rgba(220,220,220,0.8), rgba(0,0,0,0.8)), 
+	url(../assets/images/smallHands.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding: 7% 0;
+	h2 {
+		text-align: center;
+		color:$accentOne;
+		font-size: 4.2rem;
+		.light {
+			@include fontLight('rale');
+		}
+	}
+}
+
+.blogBoxContain {
+	display: flex;
+	@include bp ('xlrg') {
+		margin:0 2%;
+	}
+	@include bp('lrg') {
+		display: block;
+		margin:0 auto;
+	}
+}
+
+.blogBoxContain__fourPiece {
+	display: flex;
+	flex-wrap: wrap;
+	width:50%;
+	padding:0;
+	list-style: none;
+	margin-top:0;
+	margin-bottom:0;
+	align-items: flex-start;
+	justify-content:space-between;
+	@include bp ('lrg') {
+		margin: 0 auto;
+		width:80%;
+	}
+	@include bp ('med') {
+		width:100%;
+		// justify-content: space-around;
+	}
+}
+
+.blogBox--half {
+	width:50%;
+	margin-left: 3%;
+	@include bp ('lrg') {
+		margin: 25px auto;
+		width: 80%;
+	}
+	@include bp ('med') {
+		width:100%;
+		margin-top:2%;
+	}
+	@include bp ('sml') {
+		margin-top:0;
+	}
+}
+
+.blogBox--quarter {
+	width: calc(50% - 3%);
+	// flex-grow:1;
+	@include bp('sml') {
+		width:100%;
+	}
+}
+
+.blogBox--marginTop {
+	align-self: flex-end;
+	@include bp('lrg') {
+		margin-top:25px;
+	}
+	@include bp('sml') {
+		margin-top:0;
+	}
+}
+
+.blogBox__imgBox {
+	height:170px;
+	overflow:hidden;
+	@include bp ('xlrg') {
+		height: initial;
+	}
+}
+
+.blogBox__img {
+	width: 110%;
+	min-height:170px;
+	display: block;
+	@include bp('xlrg') {
+		min-height: initial
+	}
+}
+
+.blogBox__img--half {
+	max-width:100%;
+	display: block;
+}
+
+.blogBox__tag {
+	background: $accentOne;
+	font-size: 1.5rem;
+	display: flex;
+	align-items:center;
+	font-family: $sanSerifTwo;
+	text-transform: uppercase;
+	text-align: center;
+	@include bp ('sml') {
+		font-size:1.3rem;
+	}
+	p{
+		padding:5% 0;
+		margin:0;
+		width:100%;
+		@include bp ('sml') {
+			padding:10px 0;
+		}
+		.fa {
+			color:$brandPrimary;
+			font-size: 1.7rem;
+			margin-left:7px;
+			}
+		}
+	.blogBox__tag--rightBorder {
+		border-right:1px solid lighten($accentTwo, 20);
+	}	
+}
+
+.blogBox__tag--bottomBorder {
+	border-bottom: 1px solid lighten($accentTwo, 20);
+	p {
+		padding: 2% 0; //This overwrites padding in .blogBox__tag p above
+	}
+}
+
+.blogBox__description {
+	background: $accentOne;
+	padding: 3%;
+	h4, h5, p {
+		margin:0;
+		padding:0;
+	}
+	h4 {
+		font-size: 3rem;
+		padding-top: 6%;
+		@include bp('xlrg') {
+			padding-top:10px;
+		}
+		@include bp('sml') {
+			font-size: 2rem;
+		}
+	}
+	h5 {
+		color:$brandPrimary;
+		font-size: 2.5rem;
+		@include bp('sml') {
+			font-size: 1.5rem;
+		}
+	}
+	p {
+		padding-top: 10px;
+		line-height: 1.5;
+		font-size: 1.8rem;
+		@include bp('sml') {
+			font-size: 1.3rem;
+		}
+	}
+}
+
+.blog__button {
+	@include buttonStyles($accentOne);
+	display: block;
+	margin: 4% auto 0 auto;
+	@include bp ('lrg') {
+		margin: 2% auto;
+	}
+}

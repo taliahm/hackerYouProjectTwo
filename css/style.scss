@@ -1,0 +1,34 @@
+@import "partials/normalize";
+@import "partials/variables";
+@import "partials/global";
+@import "partials/header";
+@import "partials/actionSection";
+@import "partials/urgentSection";
+@import "partials/causeSection";
+@import "partials/carouselSection"; //also includes Purchase section
+@import "partials/blogSection";
+@import "partials/statSection";
+@import "partials/aboutSection";
+@import "partials/contactSection";
+@import "partials/footer";
+
+
+// Responsive example, delete me!!!!
+// body {
+// 	// background: purple;
+// 	@include bp ('xlrg') {
+// 		background: lightblue;
+// 	}
+// 	@include bp('lrg') {
+// 			background: yellow;
+// 			}
+		
+// 	@include bp('med') {
+// 		background: green;
+// 	}
+// 	@include bp('sml') {
+// 		background: pink;
+// 	}
+// }
+
+

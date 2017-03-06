@@ -1,0 +1,135 @@
+.action {
+	display: flex;
+	@include bp('med') {
+		flex-wrap:wrap;
+	}
+}
+
+.actionBox {
+	width:33.333%;
+	color:white;
+	padding:25px;
+	position: relative;
+	text-align: center;
+	@include bp('med') {
+		width:100%;
+	}
+	@include bp ('sml') {
+		padding: 12px;
+	}
+}
+
+.actionBox__overlay {
+	position: absolute;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	align-items:center;
+	max-width: 100%;
+	transition: all 0.2s ease;
+}
+
+.actionBox__textContain {
+	position: relative;
+	z-index: 3;
+}
+
+
+.actionBox--blue {
+	background:url(../assets/images/teaser01.jpg);	
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	@include bp('med') {
+		background-position: top;
+	}
+}
+
+.actionBox__overlay--blue {
+	background-color: rgba(50, 77, 91, 0.8);
+}
+
+.actionBox:hover .actionBox__overlay--blue {
+	background-color: rgba(50, 77, 91, 0.9);
+}
+
+.actionBox--purple {
+	background: url(../assets/images/teaser02-copy.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	@include bp('med') {
+		background-position: top;
+	}
+}
+
+.actionBox__overlay--purple {
+	background-color: rgba(71, 65, 70, 0.8);
+}
+
+.actionBox:hover .actionBox__overlay--purple {
+	background-color: rgba(71, 65, 70, 0.9);
+}
+
+.actionBox--red {
+	background: url(../assets/images/teaser03-copy.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position:center;
+	@include bp('med') {
+		background-position: top;
+	}
+}
+
+.actionBox__overlay--red {
+	background-color: rgba(93, 53, 49, 0.8);
+}
+
+.actionBox:hover .actionBox__overlay--red{
+	background-color: rgba(93, 53, 49, 0.9);
+}
+
+.actionBox__header {
+	font-size: 4rem;
+	text-transform: capitalize;
+	margin:0;
+	padding:16px;
+	@include bp('xlrg') {
+		padding-bottom:0;
+	}
+	@include bp('med') {
+		padding:0;
+		font-size: 3.5rem;
+	}
+}
+
+.actionBox__header:after {
+	content:" ";
+	display: block;
+	width:20%;
+	border-bottom: 1px solid $accentTwo;
+	margin:0 auto;
+	padding-top:16px;
+}
+
+.actionBox__text {
+	font-size: 1.6rem;
+	padding:1% 25%;
+	margin:20px 0;
+	display: block;
+	min-height:85px;
+	@include bp ('lrg') {
+		padding: 12px 0;
+		min-height:0px;
+	}
+	@include bp('med'){
+		padding:6px 0;
+		font-size: 1.3rem;
+	}
+}
+
+.actionBox__button {
+	@include buttonStyles($accentOne);
+}
+

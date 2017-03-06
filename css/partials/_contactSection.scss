@@ -1,0 +1,195 @@
+
+.contact {
+	background: linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)), url(../assets/images/GoogleMapimage.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 50px 0 275px 0;
+	position: relative;
+	@include bp('sml') {
+		padding: 50px 0 150px 0;
+	}
+}
+
+
+.mapOverlay__header {
+	text-align: center;
+	font-size: 5rem;
+	text-transform: uppercase;
+	.light {
+		@include fontLight('rale');
+	}
+}
+
+.contactList {
+	display: flex;
+	justify-content: space-around;
+	align-items: baseline;
+	list-style: none;
+	padding:0;
+	@include bp('sml') {
+		flex-direction:column;
+		align-items:flex-start;
+		margin-left: 30px;
+	}
+}
+
+.contactList__box {
+	text-align: center;
+	font-size: 1.7rem;
+	@include bp('med') {
+		font-size: 1.3rem;
+	}
+	@include bp ('sml') {
+		margin: 20px 0;
+		display: flex;
+		justify-content:flex-start;
+		order: 1;
+		text-align: left;
+	}
+	img {
+		margin-bottom: 20px;
+	}
+}
+
+
+
+.contactList__box--orderChange {
+	@include bp('sml') {
+		order:-1;
+	}
+}
+
+.contactList__item {
+	margin:0;
+	@include bp('sml') {
+		margin-left: 10px;
+	}
+}
+
+.contactList__emailLink {
+	text-decoration: none;
+	color: $brandSecondary;
+}
+
+.contactPopOut {
+	position: absolute;
+	bottom: -8%;
+	width:100%;
+	display: none;
+	@include bp('sml') {
+		top: 50%;
+	}
+}
+
+.showPopOut {
+	display: block;
+}
+
+#popOutClick {
+	cursor: pointer;
+}
+
+#popOutClick img:hover {
+	// background: $accentTwo;
+	border-radius:7px;
+	transform: scale(1.3);
+	transition: all 0.3s ease;
+}
+
+.contactForm {
+	background: white;
+	padding: 3% 2%;
+	display: flex;
+	flex-direction:column;
+}
+
+.formFlex {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	@include bp('sml') {
+		flex-direction:column;
+		justify-content: center;
+		align-content:center;
+	}
+}
+
+.contactForm__contain {
+	list-style: none;
+	padding:0;
+	width:50%;
+	margin:0;
+	@include bp('sml') {
+		width:100%;
+	}
+}
+
+.contactForm__item {
+	display: flex;
+	align-items: center;
+	position: relative;
+	margin: 7px 0;
+}
+
+.contactForm__input {
+	background: none;
+	width:100%;
+	border: none;
+	outline: none;
+	border: 1px solid lighten($accentTwo, 20);
+	padding: 10px 10px 10px 50px;
+	font-size: 1.4rem;
+}
+
+.contactForm__input:focus ~ label {
+	color:$brandPrimary;
+	font-size: 2rem;
+}
+
+
+.contactForm__label {
+	position: absolute;
+	left:15px;
+	top:50%;
+	transform:translate(-50%, -50%);
+	font-size: 1.8rem;
+	transition:all 0.3s ease;
+}
+
+.contactForm__contain--right {
+	margin-left:2%;
+	margin-top: 7px;
+	@include bp('sml') {
+		margin-left:0;
+	}
+}
+.contactForm__messageContain {
+	position: relative;
+	width:100%;
+	textarea {
+		width:100%;
+		padding: 1% 1% 0 25px;
+		font-size: 1.3rem;
+		border:none;
+		border:1px solid lighten($accentTwo, 20);
+		resize:none;
+	}
+}
+
+.contactForm__messageContain textarea:focus ~ label {
+	color:$brandPrimary;
+	font-size: 2rem;
+}
+
+.contactForm__messageLabel {
+	position: absolute;
+	top:5px;
+	left:5px;
+	font-size: 1.8rem;
+}
+
+.submitButton {
+	margin: 15px auto;
+	align-self:center;
+	@include submitButton($accentTwo);
+}

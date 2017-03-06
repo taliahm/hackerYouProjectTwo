@@ -1,0 +1,174 @@
+
+
+.about {
+	margin: 8% 0;
+	@include bp ('xlrg') {
+		margin: 8% 1%;
+	}
+	@include bp('sml') {
+		margin: 8% 2%;
+	}
+}
+
+.aboutBoxContain {
+	display: flex;
+	justify-content: space-around;
+	@include bp('lrg') {
+	flex-wrap: wrap;
+	}
+}
+
+.aboutOne, .aboutTwo {
+	width:33.3%;
+	margin-right:4%;
+	@include bp('lrg') {
+		width:40%;
+	}
+	@include bp('med') {
+		width: calc(50% - 4%);
+	}
+	@include bp('sml') {
+		width:100%;
+	}
+	h3 {
+		font-size: 2.8rem;
+		margin-bottom:25px;
+		.light {
+			@include fontLight('rale');
+		}
+	}
+	p {
+		line-height: 1.5;
+		font-size: 1.7rem;
+		margin:0;
+	}
+}
+.listRedDot {
+		list-style: none;
+		padding-left:0;
+		font-size: 1.7rem;
+		& li:last-child {
+			border-bottom: 1px solid lighten($accentTwo, 20);
+		}
+		li {
+		padding:15px 0 15px 20px;
+		border-top:1px solid lighten($accentTwo, 20);
+		position: relative;
+
+		}
+		li:before {
+			content:"\f10c";
+			font-family: "fontAwesome";
+			font-size: 1rem;
+			padding-right:10px;
+			color:$brandPrimary;
+			position: absolute;
+			top:50%;
+			left:15px;
+			transform:translate(-50%, -50%);
+		}
+	}
+
+.aboutTwo {
+	select {
+		margin-top:10px;
+		background: none;
+		border:none;
+		outline:none;
+		width:100%;
+		font-size: 1.7rem;
+		color:$accentTwo;
+	}
+}
+
+.aboutTwo .dropdown {
+	padding:0;
+	list-style: none;
+}
+.aboutTwo .dropdownAttach {
+	position: relative;
+}
+
+ .hiddenMenu {
+	position: absolute;
+	top:100%;
+	left:0;
+	display: none;
+	background: darken($accentOne, 30);
+	width:100%;
+}
+
+.aboutTwo .dropdownAttach:hover .hiddenMenu {
+	display: block;
+}
+
+.hiddenMenu li:hover {
+	background: $accentTwo;
+}
+
+.aboutTwo .label {
+	font-size: 1.7rem;
+	display: flex;
+	margin-bottom:5px;
+}
+
+.aboutTwo__text {
+	padding:5%;
+}
+
+.aboutTwo p.label__text {
+	padding: 10px;
+	border-left:1px solid lighten($accentTwo, 20);
+	border-top:1px solid lighten($accentTwo, 20);
+	border-bottom:1px solid lighten($accentTwo, 20);
+	margin:0;
+	width:90%;
+}
+
+.aboutTwo p.label__arrow {
+	margin:0;
+	background: $brandPrimary;
+	color: $accentOne;
+	padding: 10px;
+	text-align:center;
+	font-size: 2rem;
+}
+
+.aboutTwo .label__arrow a {
+	color: $accentOne;
+	text-decoration: none;
+}
+
+.aboutThree {
+	width:33.3%;
+	background: linear-gradient(rgba(220,220,220,0.8), rgba(0,0,0,0.8)), url(../assets/images/banner.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content:flex-end;
+	align-items: center;
+	padding-bottom: 10%;
+	@include bp('lrg') {
+		width: 100%;
+		justify-content:center;
+		padding:10% 0;
+	}
+}
+
+.aboutThree__header {
+	font-size:4rem;
+	margin:0;
+	text-transform: uppercase;
+	color: $accentOne;
+	line-height: 0.9;
+}
+
+.aboutThree__header--bottom {
+	color: $brandPrimary;
+	margin-bottom: 20px;
+}
+
+.aboutThree__button {
+	@include buttonStyles($accentOne);
+}

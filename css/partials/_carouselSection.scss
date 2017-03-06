@@ -1,0 +1,55 @@
+
+
+//Carousel Section
+.main-carousel {
+	margin-top:60px;
+	height:200px;
+}
+
+.carousel-cell {
+
+}
+
+.carousel-cell img {
+
+}
+
+//Purchase Theme Section
+.purchase {
+	padding:2% 0;
+}
+.purchaseFlex {
+	display: flex;
+	align-items:center;
+	justify-content:space-between;
+	@include bp ('xlrg'){
+		padding:2%;
+	}
+	p {
+		font-size: 2rem;
+		margin:0;
+		@include bp('med') {
+			font-size: 1.5rem;
+		}
+		@include bp('sml') {
+			font-size: 1.3rem;
+		}
+	.red {
+		font-weight: 700;
+		color:$brandPrimary;
+		margin-right: 2px;
+		}
+	}
+}
+
+.purchaseContain {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.purchaseFlex button {
+	@include buttonStyles($brandSecondary);
+	@include bp('sml') {
+		padding: 10px;
+	}
+}
